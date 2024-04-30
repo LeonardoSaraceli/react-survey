@@ -14,6 +14,14 @@ function Survey() {
   const handleSubmit = (e) => {
     e.preventDefault()
     setValues([...values, formData])
+    setFormData({
+      rate: '',
+      spendTime: '',
+      feedback: '',
+      name: '',
+      email: ''
+    })
+    e.target.reset()
     console.log(formData)
   }
 
