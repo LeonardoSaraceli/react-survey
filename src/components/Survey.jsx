@@ -4,6 +4,7 @@ import CheckboxInput from "./CheckboxInput";
 import TextAreaInput from "./TextAreaInput";
 import TextInput from "./TextInput";
 import EmailInput from "./EmailInput";
+import AnswersList from "./AnswersList";
 
 function Survey() {
   const [open, setOpen] = useState(false); //Ignore this state
@@ -27,14 +28,13 @@ function Survey() {
       email: ''
     })
     e.target.reset()
-    console.log(values)
   }
 
   return (
     <main className="survey">
       <section className={`survey__list ${open ? "open" : ""}`}>
         <h2>Answers list</h2>
-        {/* answers should go here */}
+        <AnswersList values={values} />
       </section>
       <section className="survey__form">
         <form onSubmit={(e) => handleSubmit(e)} className="form">
